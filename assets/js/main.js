@@ -398,4 +398,28 @@
 						$main._show(location.hash.substr(1), true);
 					});
 
+	// Work article tabs.
+		var $workArticle = $('#work'),
+			$workTabs = $workArticle.find('.tab-button'),
+			$workPanels = $workArticle.find('.tab-panel');
+
+		if ($workTabs.length && $workPanels.length) {
+			$workTabs.on('click', function() {
+
+				var $button = $(this),
+					targetId = $button.data('target'),
+					$targetPanel = $workPanels.filter('#' + targetId);
+
+				if ($button.hasClass('active') || $targetPanel.length === 0)
+					return;
+
+				$workTabs.removeClass('active').attr('aria-selected', 'false');
+				$button.addClass('active').attr('aria-selected', 'true');
+
+				$workPanels.removeClass('active').attr('hidden', true);
+				$targetPanel.addClass('active').removeAttr('hidden');
+
+			});
+		}
+
 })(jQuery);
