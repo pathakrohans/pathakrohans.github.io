@@ -704,6 +704,18 @@ input, select, textarea {
 				width: 100%;
 			}
 
+		.image.main.featured {
+			width: calc(100% + 5rem);
+			max-width: none;
+			margin: 0 0 2.5rem -2.5rem;
+		}
+
+			.image.main.featured img {
+				width: 100%;
+				height: auto;
+				object-fit: cover;
+			}
+
 		.image.main.portrait {
 			max-width: 16rem;
 			margin-left: auto;
@@ -737,10 +749,20 @@ input, select, textarea {
 				object-fit: cover;
 			}
 
+		.image.no-overlay:before {
+			display: none;
+			}
+
 		@media screen and (max-width: 736px) {
 
 			.image.main {
 				margin: 2rem 0;
+			}
+
+			.image.main.featured {
+				width: calc(100% + 4rem);
+				margin-left: -2rem;
+				margin-right: -2rem;
 			}
 
 		}
@@ -749,6 +771,12 @@ input, select, textarea {
 
 			.image.main {
 				margin: 1.5rem 0;
+			}
+
+			.image.main.featured {
+				width: calc(100% + 3rem);
+				margin-left: -1.5rem;
+				margin-right: -1.5rem;
 			}
 
 		}
@@ -1687,6 +1715,48 @@ input, select, textarea {
 				margin: 0.35rem 0 0.85rem 0;
 			}
 
+	.timeline-entry .entry-header {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		align-items: flex-start;
+		gap: 1rem;
+		margin-bottom: 0.85rem;
+	}
+
+		.timeline-entry .entry-title {
+			flex: 1;
+		}
+
+	.timeline-logo {
+		width: 3.25rem;
+		height: 3.25rem;
+		border-radius: 50%;
+		border: solid 1px rgba(255, 255, 255, 0.4);
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(255, 255, 255, 0.05);
+		min-width: 3.25rem;
+		align-self: flex-start;
+		margin-top: 0.15rem;
+	}
+
+		.timeline-logo .icon:before {
+			font-size: 1.4rem;
+		}
+
+		.timeline-logo img {
+			width: 100%;
+			height: auto;
+			object-fit: contain;
+			border-radius: 50%;
+		}
+
 	.project-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
@@ -1723,6 +1793,7 @@ input, select, textarea {
 
 	.section-tabs {
 		display: inline-flex;
+		align-items: center;
 		gap: 0.5rem;
 		margin: 0 0 1.75rem 0;
 		border: solid 1px rgba(255, 255, 255, 0.15);
@@ -1731,6 +1802,9 @@ input, select, textarea {
 	}
 
 		.section-tabs .tab-button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			background: transparent;
 			border: none;
 			color: inherit;
@@ -1738,6 +1812,7 @@ input, select, textarea {
 			letter-spacing: 0.15rem;
 			font-size: 0.75rem;
 			padding: 0.5rem 1.5rem;
+			line-height: 1;
 			border-radius: 999px;
 			cursor: pointer;
 			transition: background-color 0.2s ease, color 0.2s ease;
