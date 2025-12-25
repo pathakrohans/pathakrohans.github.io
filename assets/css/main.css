@@ -1398,6 +1398,8 @@ input, select, textarea {
 			display: -webkit-flex;
 			display: -ms-flex;
 			display: flex;
+			position: relative;
+			overflow: hidden;
 			margin-bottom: 0;
 			list-style: none;
 			padding-left: 0;
@@ -1954,6 +1956,23 @@ input, select, textarea {
 			.tab-panel.active {
 				display: block;
 			}
+
+	.form-status {
+		margin: 0.5rem 0 0;
+		font-size: 0.9rem;
+	}
+
+		.form-status.is-success {
+			color: #8ef0b6;
+		}
+
+		.form-status.is-error {
+			color: #ff9ca7;
+		}
+
+		.form-status.is-pending {
+			color: #ffd9a0;
+		}
 
 /* Footer */
 

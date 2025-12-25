@@ -20,7 +20,7 @@
 						<div class="content">
 							<div class="inner">
 								<h1>Rohan Pathak</h1>
-								<p>Second-Year Electrical & Computer Engineering @ Cornell University</p>
+								<p>Electrical & Computer Engineering @ Cornell University</p>
 							</div>
 						</div>
 						<nav>
@@ -199,21 +199,25 @@
 										</ul>
 									</section>
 									<section>
-										<form method="post" action="#">
+										<form id="contact-form" method="post" action="https://formsubmit.co/rp676@cornell.edu">
 											<div class="fields">
 												<div class="field half">
 													<label for="name">Name</label>
-													<input type="text" name="name" id="name" placeholder="Ada Lovelace" />
+													<input type="text" name="name" id="name" placeholder="Ada Lovelace" autocomplete="name" required />
 												</div>
 												<div class="field half">
 													<label for="email">Email</label>
-													<input type="email" name="email" id="email" placeholder="you@company.com" />
+													<input type="email" name="email" id="email" placeholder="you@company.com" autocomplete="email" required />
 												</div>
 												<div class="field">
 													<label for="message">Message</label>
-													<textarea name="message" id="message" rows="4" placeholder="Let's build something together."></textarea>
+													<textarea name="message" id="message" rows="4" placeholder="Let's build something together." required></textarea>
 												</div>
 											</div>
+											<input type="hidden" name="_captcha" value="false" />
+											<input type="hidden" name="_subject" value="New message from pathakrohans.github.io" />
+											<input type="hidden" name="_template" value="table" />
+											<div class="form-status" id="contact-status" role="status" aria-live="polite" hidden></div>
 											<ul class="actions">
 												<li><input type="submit" value="Send Message" class="primary" /></li>
 											</ul>
@@ -240,6 +244,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/contact.js"></script>
 
 	</body>
 </html>
